@@ -4,12 +4,12 @@ sources:
     schema: mk_mall
     tables:
       - name: customers
-      - name: v_nations
-      - name : stg_nations
-      - name : nations
-      - name : suppliers
-      - name : regions
 
+      - name: partsupps 
+      - name: nations
+      - name: regions
+
+      - name: suppliers
       - name: orders
         config:
           freshness:

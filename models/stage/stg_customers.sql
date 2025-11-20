@@ -1,3 +1,7 @@
+{#{{ config(
+    tags='sample'
+)}} #}
+
 with customer as (
 select 
    c_custkey as customer_id,
@@ -9,7 +13,6 @@ select
    c_mktsegment as market_segment,
    c_comment as comment
 from {{ source('src','customers') }}
-limit 100
 )
 
 select * from customer

@@ -1,4 +1,6 @@
-{{ config(alias=this.name+var('v_id'))}}
+{{ config(
+    alias=this.name+var('v_id'), 
+    access = 'public')}}
 with nation as (
 select 
    n_nationkey as nation_id,
