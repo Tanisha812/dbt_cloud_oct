@@ -34,8 +34,9 @@ models:
         data_type: int
         data_tests:
           - relationships:
-              to: ref('stg_regions')
-              field: region_id 
+              arguments:
+                to: ref('stg_regions')
+                field: region_id 
 
       - name: updated_at
         data_type: timestamp
@@ -60,8 +61,9 @@ models:
       - name: c_nation_id
         data_tests:
           - relationships:
-              to: ref('stg_nations')
-              field: nation_id
+              arguments:
+                to: ref('stg_nations')
+                field: nation_id
   - name: stg_orders
     columns:  
       - name: order_id
@@ -71,8 +73,9 @@ models:
       - name: customer_id
         data_tests:
           - relationships:
-              to: ref('stg_customers')
-              field: customer_id
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
       - name: status_code
         data_tests:
           - accepted_values:
