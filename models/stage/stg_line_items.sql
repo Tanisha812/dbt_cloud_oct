@@ -15,7 +15,7 @@ changed as (
         l_shipmode as ship_mode,
         l_shipinstruct as ship_instructions,
 
-        -numbers
+        --numbers
         l_quantity as quantity,
         l_extendedprice as extended_price,
         l_discount as discount_percentage,

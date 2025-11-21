@@ -1,3 +1,5 @@
+{{ config(
+    materialized='ephemeral')}}
 with supply as (
     select      
         c.s_suppkey as supplier_id,
