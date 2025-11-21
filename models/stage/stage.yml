@@ -15,7 +15,6 @@ models:
                 config:
                   store_failures: true
                   schema: error
-
   - name: stg_nations
     config:
       group: sales
@@ -40,9 +39,8 @@ models:
         description: '{{ doc("Foreign_Key")}}'
         data_tests:
           - relationships:
-              to: ref('stage_regions')
-              field: region_id
-      
+              to: ref('stg_regions')
+              field: region_id    
   - name: stg_line_items
     description: "All items for each order"
     columns:
@@ -62,7 +60,6 @@ models:
           - relationships:
               to: ref('stg_nations')
               field: nation_id
-
   - name: stg_orders
     columns:  
       - name: order_id

@@ -1,4 +1,3 @@
-{{ config(alias='stage_regions') }}
 with region as (
 select 
    r_regionkey as region_id,
