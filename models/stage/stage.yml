@@ -32,15 +32,17 @@ models:
           - not_null
       - name: region_id
         data_type: int
+        data_tests:
+          - relationships:
+              to: ref('stg_regions')
+              field: region_id 
 
       - name: updated_at
         data_type: timestamp
 
         description: '{{ doc("Foreign_Key")}}'
-        data_tests:
-          - relationships:
-              to: ref('stg_regions')
-              field: region_id    
+         
+
   - name: stg_line_items
     description: "All items for each order"
     columns:
