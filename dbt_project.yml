@@ -39,3 +39,6 @@ models:
     # Applies to all files under models/example/
     stage:
       +materialized: table
+flags:
+  require_generic_test_arguments_property: true
+
