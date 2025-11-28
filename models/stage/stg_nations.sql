@@ -5,8 +5,9 @@ with nation as (
 select 
    n_nationkey as nation_id,
    n_name as name,
-   n_regionkey as region_id,
-   updated_at
+   n_regionkey::int as region_id,
+   updated_at,
+   '{{ invocation_id }}' as invocation_id
 from {{ source('src','nations')}}
 )
 select * from nation

@@ -5,7 +5,7 @@ sources:
     tables:
       - name: customers
 
-      - name: partsupps 
+      - name: partsupps
       - name: nations
       - name: regions
 

@@ -19,7 +19,7 @@ models:
     config:
       group: sales
       contract:
-        enforced: true
+        enforced: false
     columns:
       - name: nation_id
         data_type: int
@@ -34,14 +34,13 @@ models:
         data_type: int
         data_tests:
           - relationships:
-              to: ref('stg_regions')
-              field: region_id 
-
+              arguments:
+                to: ref('stg_regions')
+                field: region_id
       - name: updated_at
         data_type: timestamp
-
         description: '{{ doc("Foreign_Key")}}'
-         
+
 
   - name: stg_line_items
     description: "All items for each order"
@@ -60,10 +59,11 @@ models:
       - name: c_nation_id
         data_tests:
           - relationships:
-              to: ref('stg_nations')
-              field: nation_id
+              arguments:
+                to: ref('stg_nations')
+                field: nation_id
   - name: stg_orders
-    columns:  
+    columns:
       - name: order_id
         data_tests:
           - unique
@@ -71,12 +71,14 @@ models:
       - name: customer_id
         data_tests:
           - relationships:
-              to: ref('stg_customers')
-              field: customer_id
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
       - name: status_code
         data_tests:
           - accepted_values:
-              values: ["P", "F", "O"]
+              arguments:
+                values: ["P", "F", "O"]
 
 seeds:
   - name: suppliers

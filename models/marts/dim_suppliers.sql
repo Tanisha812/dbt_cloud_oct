@@ -1,5 +1,6 @@
 {{ config(
-    tags='sample')}}
+    materialized='incremental',
+    tags='sample') }}
 
 with supplier as (
     select *
@@ -19,13 +20,12 @@ region as (
 select 
     s.supplier_id,
     s.supplier_name,
-    s.supplier_address,
-    s.phone_number,
-    s.comment as supplier_comment,
     s.account_balance,
-    s.updated_time as supplier_updated_time,
+    s.phone_number,
+    s.supplier_address,
     n.name as nation,
     r.name as region,
+    s.updated_time as supplier_updated_time,
     {{ dbt_meta()}}
 from supplier s
 join nation n
