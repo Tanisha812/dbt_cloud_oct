@@ -25,3 +25,4 @@ join nation n
     on c.c_nation_id = n.nation_id
 join region r
     on n.region_id = r.region_id
+

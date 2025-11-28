@@ -5,16 +5,17 @@ sources:
     tables:
       - name: customers
 
-      - name: partsupps 
+      - name: partsupps
       - name: nations
       - name: regions
 
       - name: suppliers
       - name: orders
-        freshness:
-          warn_after: {count: 3, period: day}
-          error_after: {count: 3, period: day}
-        loaded_at_field: o_orderdate::timestamp_ntz
+        config:
+          freshness:
+            warn_after: {count: 3, period: day}
+            error_after: {count: 3, period: day}
+          loaded_at_field: o_orderdate::timestamp_ntz
       - name: lineitems
       - name: parts
 
